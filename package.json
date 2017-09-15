@@ -1,0 +1,26 @@
+{
+  "name": "testemercadolivre",
+  "version": "1.0.0",
+  "description": "Teste para o Mercado Livre",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raphaelwilker/testemercadolivre.git"
+  },
+  "keywords": [
+    "teste",
+    "mercado",
+    "livre"
+  ],
+  "author": "Raphael Wilker",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/raphaelwilker/testemercadolivre/issues"
+  },
+  "homepage": "https://github.com/raphaelwilker/testemercadolivre#readme"
+}
