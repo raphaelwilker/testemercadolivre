@@ -10,7 +10,7 @@
 .logo { 
 	background-image:url(https://http2.mlstatic.com/ui/navigation/2.3.4/mercadolibre/logo-pt__large.png);
 	width: 65px;
-	top:7px;
+	top:6px;
 	height:40px;
 	background-repeat: no-repeat;
 	display: inline-block;
@@ -19,8 +19,9 @@
 }
 
 .search {
-	padding: 5px 60px 5px 15px;
+	padding: 5px 560px 5px 15px;
 	margin: 10px 0px 0px 0px;
+	border: none;
 }
 
 .body{
@@ -29,4 +30,14 @@
 	height: 100%;
     width: 100%;
     position: absolute;
+}
+
+.btn_search{
+	width: 46px;
+    height: 30px;
+    position: absolute;
+    top: 10px;
+    border-radius: 0px 3px 3px 0px;
+    border: 0px;
+    background-image: linear-gradient(#fff,#f1f1f1);
 }

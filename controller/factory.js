@@ -17,7 +17,9 @@ var dataProvider = angular.module('dataSeverProvider', []);
  *
  *
  */
-dataProvider.controller('serverDataProvider', ['$scope', '$sce', function ($scope, $sce) {}]);
+dataProvider.controller('serverDataProvider', ['$scope', '$sce', function ($scope, $sce) {
+	console.log('LOL')
+}]);
 /**
  * @ngdoc service
  * @name  dataSeverProvider.factory:serverDataProvider
