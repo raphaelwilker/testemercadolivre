@@ -41,3 +41,29 @@
     border: 0px;
     background-image: linear-gradient(#fff,#f1f1f1);
 }
+
+.item{
+	margin:10px 0px;
+}
+
+.background-list{
+	background-color: #fff;
+	width: 75%;
+    margin-top: 10px;
+    max-width: 884px;
+}
+
+.background-list ul {
+	list-style: none;
+}
+
+.item .sale-title-description{
+	color: #333;
+	font-size: 20px;
+	line-height: 1.2;
+	min-height: inherit;
+}
+
+.item a:visited {
+	color: #809;
+}

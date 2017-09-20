@@ -27,22 +27,23 @@
         	
             var self = this;
             scope.send = function(){
-                console.log('Oi: '+scope.itemSearch);
+                serverDataProvider.searchProduct(scope.itemSearch,function(data){
+                    console.log('Returned '+data);
+                    console.log(data);
+                    $rootScope.$broadcast('listProducts',{
+                        list:data
+                    });
+                });
             }
 
-            scope.change = function(){
-                serverDataProvider.test(scope.itemSearchscope.itemSearch,function(){
-                    
+            scope.change = function(event){
+                console.log(event.keyCode);
+                serverDataProvider.autosuggest(scope.itemSearch,function(data){
+                    console.log('ReturnedLOL '+data);
+                    console.log(data);
                 });
-                //$rootScope.$broadcast('callSearch');
-                //serverDataProvider.searchElement();
             }
             
-            /*
-            $rootScope.$on('returnSearch',function(){
-                $scope.content_1 = false;
-                $scope.content_2 = !$scope.content_1;
-            });*/
             
         }
     }

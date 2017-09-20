@@ -20,7 +20,7 @@
 var registerModule = angular.module('registerClient', ['dataSeverProvider'])
 
 registerModule.controller('registerController',['serverDataProvider','$scope','$rootScope', function (serverDataProvider,$scope,$rootScope){
-	console.log('oi')
+	console.log('oi');
 	
 }]);
 

@@ -1,0 +1,14 @@
+<div class="row background-list" ng-show="showList">
+	<ul>
+		<div ng-repeat="item in items">
+			<li  class="item row" id="li{{$index}}">
+				<div class="col-lg-3 thumbs"><img src="{{item.thumbnail}}" width="160" height="160" /></div>
+				<div class="col-lg-9 description">
+					<h2 class="title-description">
+						<a href="{{item.link}}" target="_blank" ><span class="sale-title-description">{{item.title}}</span></a>
+					</h2>
+				</div>
+			</li>
+		</div>
+	</ul>
+</div>
