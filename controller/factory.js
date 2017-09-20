@@ -8,7 +8,7 @@ var messageError = 'Um erro ocorreu no servidor!';
  *
  *
  */
-var dataProvider = angular.module('dataSeverProvider', []);
+angular.module('dataSeverProvider', [])
 /**
  * @ngdoc controller
  * @name  dataSeverProvider.controller:serverDataProvider
@@ -17,9 +17,9 @@ var dataProvider = angular.module('dataSeverProvider', []);
  *
  *
  */
-dataProvider.controller('serverDataProvider', ['$scope', '$sce', function ($scope, $sce) {
+/*.controller('serverDataProvider', ['$scope', '$sce', function ($scope, $sce) {
 	console.log('LOL')
-}]);
+}]);*/
 /**
  * @ngdoc service
  * @name  dataSeverProvider.factory:serverDataProvider
@@ -29,6 +29,13 @@ dataProvider.controller('serverDataProvider', ['$scope', '$sce', function ($scop
  *
  *
  */
- dataProvider.factory('serverDataProvider', ['dataProvider', '$http',  function(dataProvider, $http) {
+.factory('serverDataProvider', ['$http',  function($http) {
+ 	
+ 	var test = function(){
+ 		console.log('serverDataProvider')
+ 	}
 
+ 	return{
+ 		test:test
+ 	}
  }]);

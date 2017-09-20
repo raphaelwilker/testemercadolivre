@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	angular.bootstrap($("body"),['dataSeverProvider','registerClient']);
+	angular.bootstrap($("body"),['registerClient']);
 	console.log('start.js');
 })
 

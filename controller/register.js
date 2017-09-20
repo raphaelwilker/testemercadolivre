@@ -17,18 +17,10 @@
      </file>
    </example>
  */
- var registerModule = angular.module('registerClient', ['ngSanitize']);
+var registerModule = angular.module('registerClient', ['dataSeverProvider'])
 
-registerModule.controller('registerController',['$scope','$rootScope',function($scope,$rootScope){
-	console.log('registerController');
-	$scope.content_1 = true;
-	$scope.content_2 = !$scope.content_1;
-	$scope.data = {}
-	$scope.errorPhrase = '<strong>error</strong>';
-	
-	$rootScope.$on('callNextContent',function(){
-		$scope.content_1 = false;
-		$scope.content_2 = !$scope.content_1;
-	});
+registerModule.controller('registerController',['serverDataProvider','$scope','$rootScope', function (serverDataProvider,$scope,$rootScope){
+	console.log('oi')
 	
 }]);
+
