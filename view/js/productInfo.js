@@ -35,7 +35,10 @@ app.directive('productInfos', ['serverDataProvider','$compile', '$rootScope',
             
             serverDataProvider.searchItem(scope.id,function(param){
                 data = param;
-                var htmlImg = '<figure><img src="'+data.pictures[0].secure_url+'"  class="thumbProduct"/></figure>'
+                var width = data.pictures[0].size.match(/(.*\d(?=x))/g);
+                var height = data.pictures[0].size.match(/([0-9])+$/g);
+                var htmlImg = '<figure><img src="'+data.pictures[0].secure_url+'"  class="thumbProduct" width="'+width
+                +'" height="'+height+'"/></figure>';
                 var htmlSaleProduct =  '<h2>'+data.title+'</h2><br> <span class="priceItem">R$'+data.price+'</span><br>'
                 +'<button class="btnSale btn btn-primary"> Comprar </button>';
                 angular.element('#imageProduct').html(htmlImg);

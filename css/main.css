@@ -52,6 +52,14 @@
     max-width: 884px;
 }
 
+
+.background-show-product{
+	background-color: #fff;
+	width: 85%;
+    margin-top: 10px;
+    max-width: 100%;
+}
+
 .background-list ul {
 	list-style: none;
 }
@@ -89,4 +97,8 @@
 
 .description img{
 	width: 85%;
+}
+
+.thumbProduct{
+	margin: 10px 25px;
 }
