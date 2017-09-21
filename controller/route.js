@@ -17,15 +17,21 @@
      </file>
    </example>
  */
-angular.module('registerClient', ['dataSeverProvider'])
+ var app = angular.module('routeTest', ['ngRoute','registerClient'])
 
-.controller('registerController',['$scope','$rootScope', function ($scope,$rootScope){
-	
-	console.log('Oi')
-	if(angular.element('input[type="search"]').val() != ''){
-        angular.element('button[ng-id="searchBtn"]').trigger('click');
-    }
-	
-}]);
+ app.config(function($routeProvider) {
+    
+    $routeProvider
+    .when("/item/:id", {
+        templateUrl : "./view/html/viewProduct.html",
+        controller: "infoProductController"
+    })
+    .when("/", {
+        templateUrl : "./view/html/viewList.html",
+        controller: "registerController"
+    })
+    .otherwise({
+    	redirectTo: '/'
+    })
 
-
+ });

@@ -25,7 +25,7 @@ gulp.task('compress', function () {
 	  	'./controller/**/*.js',
 	  	'./view/**/*.js'])
   	    .pipe(concat('teste-mercado-livre-min.js'))
-        .pipe(uglify())
+        .pipe(uglify({mangle: false}))
         .pipe(gulp.dest('./bin/js'))
 
     gulp.src(['./scripts/angular/angular.min.js'])    

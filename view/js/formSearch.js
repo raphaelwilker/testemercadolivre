@@ -17,7 +17,7 @@
      </file>
    </example>
  */
- registerModule.directive('formSearch', ['serverDataProvider','$compile', '$rootScope',
+ app.directive('formSearch', ['serverDataProvider','$compile', '$rootScope',
     function(serverDataProvider,$compile,$rootScope){
     return {
         restrict: 'EA',
@@ -27,20 +27,23 @@
         	
             var self = this;
             scope.send = function(){
-                serverDataProvider.searchProduct(scope.itemSearch,function(data){
-                    console.log('Returned '+data);
-                    console.log(data);
-                    $rootScope.$broadcast('listProducts',{
-                        list:data
-                    });
-                });
+                if(window.location.href!='http://localhost:8080/#!/'){
+                    window.location.href ='http://localhost:8080/#!/';
+                }else{
+                   serverDataProvider.searchProduct(scope.itemSearch,function(data){
+                        $rootScope.$broadcast('listProducts',{
+                            list:data
+                        });
+                   }); 
+                }
+                
             }
 
             scope.change = function(event){
-                console.log(event.keyCode);
+                //console.log(event.keyCode);
                 serverDataProvider.autosuggest(scope.itemSearch,function(data){
-                    console.log('ReturnedLOL '+data);
-                    console.log(data);
+                    //console.log('ReturnedLOL '+data);
+                    //console.log(data);
                 });
             }
             

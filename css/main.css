@@ -27,7 +27,6 @@
 .body{
 	margin-top:50px;
 	background-color: #f5f5f5;
-	height: 100%;
     width: 100%;
     position: absolute;
 }
@@ -66,4 +65,28 @@
 
 .item a:visited {
 	color: #809;
+}
+
+.thumb{
+	height: 100%
+	border-radius 4px;
+}
+
+.priceItem{
+	font-size: 24px;
+}
+
+.stage{
+	height: 100%;
+}
+
+.btnSale{
+
+    padding: 12px 62px 24px 62px !important;
+    border: none !important;
+
+}
+
+.description img{
+	width: 85%;
 }

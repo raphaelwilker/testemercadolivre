@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	angular.bootstrap($("body"),['registerClient']);
+	//angular.bootstrap($("body"),['route']);
 	console.log('start.js');
 })
 

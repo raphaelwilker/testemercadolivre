@@ -31,6 +31,8 @@ angular.module('dataSeverProvider', [])
  */
 .factory('serverDataProvider', ['$http',  function($http) {
  	
+	var dataProvider;
+
  	var searchProduct = function(model, callback){
  	
  		console.log('serverDataProvider'+model);
@@ -41,6 +43,7 @@ angular.module('dataSeverProvider', [])
  		})
  		.then(function(response){
  			console.log(response.status);
+ 			dataProvider = response.data.results;
  			callback(response.data.results);
  		})
  		.catch(function(response){
@@ -64,9 +67,40 @@ angular.module('dataSeverProvider', [])
  		});
  	}
 
+ 	var searchItem = function(id,callback){
+ 		var url = 'https://api.mercadolibre.com/items/'+id;
+ 		$http({
+ 			method:'GET',
+ 			url:url
+ 		})
+ 		.then(function(response){
+ 			callback(response.data);
+ 		})
+ 		.catch(function(response){
+ 			callback(response);	
+ 		});
+ 	}
+
+ 	var getDescriptionItem = function(id,callback){
+ 		var url = 'https://api.mercadolibre.com/items/'+id+'/description';
+ 		$http({
+ 			method:'GET',
+ 			url:url
+ 		})
+ 		.then(function(response){
+ 			callback(response.data);
+ 		})
+ 		.catch(function(response){
+ 			callback(response);	
+ 		});
+ 	}
+
  	return{
  		searchProduct:searchProduct,
- 		autosuggest:autosuggest
+ 		autosuggest:autosuggest,
+ 		dataProvider:dataProvider,
+ 		getDescriptionItem:getDescriptionItem,
+ 		searchItem:searchItem
  	}
 
  }]);
