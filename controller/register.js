@@ -19,9 +19,9 @@
  */
 angular.module('registerClient', ['dataSeverProvider'])
 
-.controller('registerController',['$scope','$rootScope', function ($scope,$rootScope){
+.controller('registerController',['$scope','$rootScope','$routeParams', function ($scope,$rootScope,$routeParams){
 	
-	console.log('Oi')
+	$scope.list = [];
 	if(angular.element('input[type="search"]').val() != ''){
         angular.element('button[ng-id="searchBtn"]').trigger('click');
     }

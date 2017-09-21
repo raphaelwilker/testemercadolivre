@@ -17,42 +17,53 @@
      </file>
    </example>
  */
- app.directive('pageProducts', ['serverDataProvider','$compile', '$rootScope',
-    function(serverDataProvider,$compile,$rootScope){
+ app.controller('searchProductController', ['$scope', '$routeParams','$rootScope', function ($scope, $routeParams,$rootScope){
+    $scope.itemToSearch = $routeParams.itemToSearch;
+ }])
+
+ app.directive('pageProducts', ['serverDataProvider','$compile',
+    function(serverDataProvider,$compile){
     return {
         restrict: 'EA',
         templateUrl: './view/html/pageProducts.html',
+        controller:'searchProductController',
         link: function(scope, element, attr){
         	
-            //scope.items = [];
-            scope.showList = false;
+            scope.showList = true;
 
-            $rootScope.$on('listProducts', function(event,list){
+            serverDataProvider.searchProduct(scope.itemSearch, function(data){
+              
                 scope.items = [];
-                var cont = 0
-                for(var i in list){
-                    for(var j in list[i]){
-                        if(cont < 4){
-                           scope.items.push({
-                                'thumbnail':list[i][j].thumbnail,
-                                'title':list[i][j].title,
-                                'link':list[i][j].permalink,
-                                'price':list[i][j].price,
-                                'id':list[i][j].id
-                            }); 
-                           cont++;
-                       }else{
-                        break;
-                       }
-                    }
-                    
-                }
-                scope.showList = true;
-                console.log('scope.items: '+scope.items);
+                scope.list = data;
+                var cont = 0;
+                console.log(scope.list);
                 
+                if(angular.element('input[type="search"]').val() == ''){
+                   angular.element('input[type="search"]').val = scope.itemSearch ;
+                }
+
+                for(var i in scope.list){
+                    
+                    if(cont < 4){
+                       scope.items.push({
+                            'thumbnail':scope.list[i].thumbnail,
+                            'title':scope.list[i].title,
+                            'link':scope.list[i].permalink,
+                            'price':scope.list[i].price,
+                            'id':scope.list[i].id
+                        }); 
+                       cont++;
+                       console.log(scope.items[i]);
+                   }else{
+
+                    break;
+                   
+                   }
+                     
+                }
+              
             });
-            
-            
+
         }
     }
 }]);

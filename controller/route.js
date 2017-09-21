@@ -26,8 +26,12 @@
         templateUrl : "./view/html/viewProduct.html",
         controller: "infoProductController"
     })
-    .when("/", {
+    .when("/:itemToSearch", {
         templateUrl : "./view/html/viewList.html",
+        controller: "searchProductController"
+    })
+    .when("/", {
+        templateUrl : "./view/html/view.html",
         controller: "registerController"
     })
     .otherwise({

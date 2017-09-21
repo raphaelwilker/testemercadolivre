@@ -27,16 +27,7 @@
         	
             var self = this;
             scope.send = function(){
-                if(window.location.href!='http://localhost:8080/#!/'){
-                    window.location.href ='http://localhost:8080/#!/';
-                }else{
-                   serverDataProvider.searchProduct(scope.itemSearch,function(data){
-                        $rootScope.$broadcast('listProducts',{
-                            list:data
-                        });
-                   }); 
-                }
-                
+                window.location.href ='http://localhost:8080/#!/'+scope.itemSearch;
             }
 
             scope.change = function(event){

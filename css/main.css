@@ -102,3 +102,7 @@
 .thumbProduct{
 	margin: 10px 25px;
 }
+
+.item .description {
+	padding: 1px;
+}
